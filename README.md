@@ -1,20 +1,19 @@
 # URD
-#undo redo pattern for C# applications
+#Undo Redo Pattern for C# applications
 
 
-this is a basic undo pattern for .NET applications. developed for use in GS subtitle project (not published) 
-in this pattern when you want a undo / redo able action you will need to warp that action with using statement.
-as a example if you going to change a property 
-you can do this
+This is a basic undo pattern for .NET applications which is developed for the use in the project GS Subtitle (not published). 
+In this pattern when you want a undo / redo able action you will need to warp that action with using statement.
+As an example if you going to change a property, you can do this:
 ```C#
 using (new PropertyChange(Object, "Property", "Property changed "))
 {
   Object.Property="new value";
 }
 ```
-now the change you made to the "Property" property of the "Object" object is added to the drop out stack and it can undo or redo any time you want.
+Now the change you made to the "Property" property of the "Object" object is added to the drop out stack and it can undo or redo any time you want.
 
-if you want a undoAble list change you can do it using same syntax
+if you want a undoAble list change you can do it using same syntax:
 
 ```C#
 private void AddNewItem(<string>List list,string item,bool undoAble)
@@ -25,8 +24,7 @@ private void AddNewItem(<string>List list,string item,bool undoAble)
 	}
 }
 ```
-
-Removing a Item 
+Removing a Item:
 ```C#
 private void RemoveItem(list,item,bool undoAble)
 {
@@ -36,12 +34,12 @@ private void RemoveItem(list,item,bool undoAble)
 	}
 }
 ```
-so on.. (check the code)
+And So on.. (check the code)
 
-benefits of this pattern 
+Benifits of this Pattern
 
-<b>low CPU, Memory usage<br/> 
-undo only what you want</b>
+<b>Low CPU and Memory Usage</b>
+<b>Undo only what you want</b>
 
 <b>if you want to implement your own operation . only thing you need to do is create a class--> extend Change class and IUndoAble interface.</b> 
 
