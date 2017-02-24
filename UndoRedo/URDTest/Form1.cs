@@ -55,10 +55,11 @@ namespace URDTest
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            using (new ListChangeRemoveElement(list.Items, list.SelectedItem, list.Items.IndexOf(list.SelectedItem), "removed an item from the list"))
-            {
-                list.Items.Remove(list.SelectedItem);
-            }
+            if (list.SelectedItem != null)
+                using (new ListChangeRemoveElement(list.Items, list.SelectedItem, list.Items.IndexOf(list.SelectedItem), "removed an item from the list"))
+                {
+                    list.Items.Remove(list.SelectedItem);
+                }
         }
     }
 }
