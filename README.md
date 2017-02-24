@@ -38,9 +38,8 @@ And So on.. (check the code)
 
 Benifits of this Pattern
 
-<b>Low CPU and Memory Usage</b><br>
-<b>Undo only what you want</b>
-
-<b>if you want to implement your own operation . only thing you need to do is create a class--> extend Change class and IUndoAble interface.</b> 
+1. <b>Low CPU and Memory Usage</b><br>
+2. <b>Undo only what you want</b>
+3. <b>if you want to implement your own operation . only thing you need to do is create a class--> extend Change class and IUndoAble interface.</b> 
 
 
